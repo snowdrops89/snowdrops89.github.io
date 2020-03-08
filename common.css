@@ -181,6 +181,10 @@ h1, h2, h3, h4, h5, h6, #title-sub, #breadcrumb {
 .article-content img {
   max-width: 100%;
 }
+.article-content .setumei {
+  font-size: 90%;
+  padding: 0 20px;
+}
 
 /* 記事中の見出し */
 .article-content h1,.article-content h2,.article-content h3,
@@ -205,7 +209,7 @@ h1, h2, h3, h4, h5, h6, #title-sub, #breadcrumb {
 .article-content h4{
   position: relative;
   padding: 10px 10px 5px 30px;
-  font-size: 120%;
+  font-size: 130%;
   width: 100%;
 }
 .article-content h4:before{
