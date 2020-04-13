@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="author" content="雪乃☆雫">
+  <meta name="keywords" content="なでしこ,なでしこv3,日本語プログラミング言語,なでしこさん,ハンバーガーメニュー">
+  <meta name="description" content="なでしこ３とCSSでハンバーガーメニューを作成">
+  <title>右側ハンバーガーメニューテスト</title>
+</head>
+
+<body>
+<!-- なでしこ3ライブラリ -->
+<script src="https://nadesi.com/v3/3.0.70/release/wnako3.js?run" defer></script>
+<script type="なでしこ">
+#-----------------------------------------------
+＃右側ハンバーガーメニューテスト
+#-----------------------------------------------
+＃---初期設定-----
+ナビフラグ＝オフ。
+
+＃---イベント-----
+「#btn-gnavi」をクリックした時には
+　もし、ナビフラグ＝オンならば、
+　　　ナビ閉じる。
+　違えば、
+　　　ナビ開く。
+　ここまで。
+ここまで。
+「#closeWindow」をクリックした時には
+　　ナビ閉じる。
+ここまで。
+
+＃---ナビ開閉-----
+●ナビ開く
+　ナビフラグ＝オン。
+　「#closeWindow」に{
+　　　"animation": "winOpen 0.3s linear 0s",
+　　　"display":"block",
+　　　"opacity":".5"
+　}をDOMスタイル一括設定。
+　「#global-navi」に{
+　　　"-webkit-transform":"translateX(-100%)",
+　　　"transform":"translateX(-100%)",　　　　//スライドして中身を表示。
+　}をDOMスタイル一括設定。
+ここまで。
+
+●ナビ閉じる
+　ナビフラグ＝オフ。
+　「#global-navi」に{
+　　　"-webkit-transform":"translateX(0%)",
+　　　"transform":"translateX(0%)",　　　　　//スライドして閉じる。
+　}をDOMスタイル一括設定。
+　「#closeWindow」に{
+　　　"animation": "winClose 0.3s linear 0s",
+　　　"opacity":"0",
+　}をDOMスタイル一括設定。
+　0.3秒後には
+　　「#closeWindow」の「display」に「none」をDOMスタイル設定。
+　ここまで
+ここまで。
+#-----------------------------------------------------------------------
+</script>
+
+<style type="text/css"> 
+/* ナビ */
+#wrapper #global-navi {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background:#333;
+    font-size: 16px;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: .3s ease-in-out;     /*アニメーション表示用の設定*/
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+#wrapper #global-navi ul{
+    padding:0px;
+}
+#wrapper #global-navi ul li {
+    display:block;
+    padding: 9px 28px;
+    border-bottom: 1px dotted #555;
+    background-color: #444;
+}
+#wrapper #global-navi ul li a{
+    text-decoration: none;
+    color: #ddd;
+    width: 99%;
+    display:block;
+}
+
+/* ハンバーガーボタン */
+#wrapper #btn-gnavi {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    z-index: 3;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+#wrapper #btn-gnavi span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #666;
+    border-radius: 10px;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+#wrapper #btn-gnavi span:nth-child(1) {
+    top: 0;
+}
+#wrapper #btn-gnavi span:nth-child(2) {
+    top: 10px;
+}
+#wrapper #btn-gnavi span:nth-child(3) {
+    top: 20px;
+}
+
+/* 閉じる用のカバーウィンドウ */
+#closeWindow {
+    display: none;   /*はじめは隠しておく*/
+    position: fixed;
+    top: 0;          /*全体を覆う*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+}
+/* カバーウィンドウ開閉アニメ用キーフレーム */
+@keyframes winOpen {
+  from {opacity: 0;}
+  to   {opacity: .5;}
+}
+@keyframes winClose {
+  from {opacity: .5;}
+  to   {opacity: 0;}
+}
+</style>
+
+<div id="wrapper">
+  <!-- ハンバーガーメニュー -->
+  <div id="btn-gnavi">
+        <span></span>
+        <span></span>
+        <span></span>
+    <!-- メニュー -->
+    <nav id="global-navi">
+      <ul>
+        <li><a href="">aaa</a></li>
+        <li><a href="">bbb</a></li>
+        <li><a href="">ccc</a></li>
+     </ul>
+    </nav>
+  </div>
+  <!-- 透明な背景ウィンドウ(閉じる専用) -->
+  <div id="closeWindow"></div>
+</div>
+
+</body>
+</html>
