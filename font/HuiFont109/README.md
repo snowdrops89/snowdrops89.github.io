@@ -7,3 +7,6 @@
 
 > [WOFFコンバータ](https://opentype.jp/woffconv.htm)
 
+# webフォントとして使う方法
+
+> https://studio-kikoro.appspot.com/blog/20151208_font.html
