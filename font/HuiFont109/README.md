@@ -3,10 +3,10 @@
 
 > [ふい字置き場。](https://hp.vector.co.jp/authors/VA039499/)
 
-# ダウンロードした .ttf を.woff形式に変換するフリーソフト
+## ダウンロードした .ttf を.woff形式に変換するフリーソフト
 
 > [WOFFコンバータ](https://opentype.jp/woffconv.htm)
 
-# webフォントとして使う方法
+## webフォントとして使う方法
 
 > https://studio-kikoro.appspot.com/blog/20151208_font.html
