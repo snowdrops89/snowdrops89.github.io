@@ -12,7 +12,7 @@
 
 ```
 @font-face {
-    font-family:NINLAL変体仮名;
+    font-family:NINJAL変体仮名;
     src: url('font/hentaigana/ninjal_hentaigana.woff') format('woff');
 }
 @font-face {
@@ -20,8 +20,8 @@
     src: url('font/hentaigana/1B000.woff') format('woff') ;
 }
 
-.hentaigana {
-    font-family: NINLAL変体仮名,変体仮名1B000;
+.NINJAL {
+    font-family: NINJAL変体仮名,変体仮名1B000;
 }
 ```
 
@@ -38,7 +38,7 @@
     font-family:花園明朝変体仮名;
     src: url('hentaigana/HanaMin_hentaigana.woff') format('woff');
 }
-.hentaigana {
+.hanazono {
     font-family: 花園明朝変体仮名;
 }
 ```
